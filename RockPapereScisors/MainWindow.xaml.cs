@@ -20,9 +20,18 @@ namespace RockPapereScisors
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Game game;
         public MainWindow()
         {
             InitializeComponent();
+            game = new Game(10);
+            game.FightFinished += Game_FightFinished;
+            game.Start();
+        }
+
+        private void Game_FightFinished()
+        {
+            txtBox.Text += $
         }
     }
 }

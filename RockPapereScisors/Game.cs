@@ -10,6 +10,9 @@ namespace RockPapereScisors
         private Timer timer;
         public player Player1 { get;}
         public player Player2 { get;}
+
+        public event Action FightFinished;
+
         public Game(int money)
         {
             Player1 = new player(money);
@@ -68,7 +71,7 @@ namespace RockPapereScisors
 
                 }
             }
-
+            FightFinished?.Invoke();
             
         }
         public void Start()
